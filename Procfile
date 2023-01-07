@@ -1,1 +1,1 @@
-web: waitress-serve iblogs.wsgi:application 
+web: waitress-serve iblogs.wsgi:application --listen=0.0.0.0:8000
