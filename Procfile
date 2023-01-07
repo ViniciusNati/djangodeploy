@@ -1,1 +1,1 @@
-web: waitress-serve iblogs.wsgi:application --threads 4 --listen=*:0.0.0.0
+web: waitress-serve iblogs.wsgi:application 
