@@ -107,11 +107,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS =[
-    os.path.join(BASE_DIR, 'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+
+#########################################
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
@@ -128,3 +138,25 @@ MATERIAL_ADMIN_SITE = {
      'MAIN_BG_COLOR':  '#000',
 
 }
+
+####tornado
+# Use tornado as the web server
+WEB_SERVER = 'tornado'
+
+# Set the listening port for the tornado server
+WEB_SERVER_PORT = 8888
+
+# Set the number of worker processes for the tornado server
+WEB_SERVER_WORKERS = 4
+
+# Set the maximum number of pending connections
+WEB_SERVER_MAX_PENDING_CONNECTIONS = 2048
+
+# Set the maximum number of simultaneous connections per worker
+WEB_SERVER_MAX_SIMULTANEOUS_CONNECTIONS_PER_WORKER = 2048
+
+# Set the number of seconds a worker can go idle before being killed
+WEB_SERVER_IDLE_TIMEOUT = 1800
+
+# Set the number of seconds a worker can take to handle a request before being killed
+WEB_SERVER_REQUEST_TIMEOUT = 60
