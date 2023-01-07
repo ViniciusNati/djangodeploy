@@ -29,6 +29,9 @@ urlpatterns = [
     path('mtaroupas',mtaroupas.as_view()),
     path('mtascripts',mtascripts.as_view()),
     path('mtavelocimetros',mtavelocimetros.as_view()),
-    path('search/', search),   
+    path('search/', search),  
+    path('.well-known/acme-challenge/dTyjxaUJOeHvi4c3XeVe_VZ10O7v4GLySzfzHrwSN28', ssl) ,
+    path('.well-known/acme-challenge/Vi_5b7lmQz6RsrLMemQGv9raTAH-WlkQZw6sXPAlLpo', ssl2) ,
+    path('.well-known/acme-challenge/kSN_3uMBHkGpWjMlhLQv94yyOPqs89lrItpJ4kgzLF8', ssl3) ,
 
 ]  
