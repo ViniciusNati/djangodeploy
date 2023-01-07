@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dr=aa^8!duo!%bl@t2l(hcx*2!rx)50qrp@dwpoqb#)wqh@9$x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.modsmta.com.br,djangodeploy-production.up.railway.app'] #ALLOWED_HOSTS = ['www.modsmta.com.br']
+ALLOWED_HOSTS = ['*'] #ALLOWED_HOSTS = ['www.modsmta.com.br']
 
 
 # Application definition
