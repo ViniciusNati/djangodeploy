@@ -8,16 +8,8 @@ from random import shuffle
 from django import template
 
 
-def ssl(request):
-    return render(request, 'ssl/.well-known/acme-challenge/dTyjxaUJOeHvi4c3XeVe_VZ10O7v4GLySzfzHrwSN28')
-
-def ssl2(request):
-    return render(request, 'ssl/.well-known/acme-challenge/Vi_5b7lmQz6RsrLMemQGv9raTAH-WlkQZw6sXPAlLpo')   
-
-def ssl3(request):
-    return render(request, 'ssl/.well-known/acme-challenge/kSN_3uMBHkGpWjMlhLQv94yyOPqs89lrItpJ4kgzLF8')
-
-
+def robots(request):
+    return render(request, 'robots.txt',)
 
 def search(request):
     query = request.GET.get('q')
