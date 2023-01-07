@@ -1,1 +1,1 @@
-gunicorn --certfile certificate.crt --keyfile private.key iblogs.wsgi --log-file -
+web: gunicorn --certfile ssl/certificate.crt --keyfile ssl/private.key iblogs.wsgi --log-file -
