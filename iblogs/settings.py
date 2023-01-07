@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dr=aa^8!duo!%bl@t2l(hcx*2!rx)50qrp@dwpoqb#)wqh@9$x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -97,9 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -139,25 +139,3 @@ MATERIAL_ADMIN_SITE = {
      'MAIN_BG_COLOR':  '#000',
 
 }
-
-####tornado
-# Use tornado as the web server
-WEB_SERVER = 'tornado'
-
-# Set the listening port for the tornado server
-WEB_SERVER_PORT = 8888
-
-# Set the number of worker processes for the tornado server
-WEB_SERVER_WORKERS = 4
-
-# Set the maximum number of pending connections
-WEB_SERVER_MAX_PENDING_CONNECTIONS = 2048
-
-# Set the maximum number of simultaneous connections per worker
-WEB_SERVER_MAX_SIMULTANEOUS_CONNECTIONS_PER_WORKER = 2048
-
-# Set the number of seconds a worker can go idle before being killed
-WEB_SERVER_IDLE_TIMEOUT = 1800
-
-# Set the number of seconds a worker can take to handle a request before being killed
-WEB_SERVER_REQUEST_TIMEOUT = 60

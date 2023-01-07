@@ -9,7 +9,7 @@ from django import template
 
 
 def robots(request):
-    return render(request, 'robots.txt',)
+    return render(request, 'robots.txt')
 
 def search(request):
     query = request.GET.get('q')
