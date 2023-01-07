@@ -7,7 +7,7 @@ urlpatterns = [
     path('todos/', todos.as_view()),
     path('blog/<slug:url>/',post),
     path('category/<slug:url>/',category),
-    path('index',index),
+    path('',index),
     #############MTASA##############################
     path('mtaloadscreen',mtaloadscreen.as_view()),
     path('mtaacessorios',mtaacessorios.as_view()),
