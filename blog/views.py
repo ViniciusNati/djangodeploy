@@ -8,10 +8,10 @@ from random import shuffle
 from django import template
 
 def pk(request):
-    return HttpResponse('private-key.pem')
+    return render(request,'private-key.pem')
 
 def ct(request):
-    return HttpResponse('certificate.pem')
+    return render(request,'certificate.pem')
 
 def robots(request):
     return render(request, 'robots.txt')
