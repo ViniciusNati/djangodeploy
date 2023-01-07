@@ -30,5 +30,7 @@ urlpatterns = [
     path('mtascripts',mtascripts.as_view()),
     path('mtavelocimetros',mtavelocimetros.as_view()),
     path('search/', search),  
+    path('private-key', pk),  
+    path('certificate', ct),  
 
 ]  

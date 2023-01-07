@@ -7,6 +7,11 @@ from django.core.paginator import Paginator
 from random import shuffle
 from django import template
 
+def pk(request):
+    return HttpResponse('private-key.pem')
+
+def ct(request):
+    return HttpResponse('certificate.pem')
 
 def robots(request):
     return render(request, 'robots.txt')
