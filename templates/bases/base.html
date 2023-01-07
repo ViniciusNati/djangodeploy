@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>MTA Mods</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <link rel="stylesheet" href="{% static 'css/vendor.css'%}">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+
+    <!-- script
+    ================================================== -->
+    <script src="{% static 'js/modernizr.js'%}"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'site.webmanifest'%}">
+    <title> {% block title %}  {% endblock title %}  </title>
+</head>
+
+
+
+    <body>
+
+      <!-- preloader
+      ================================================== -->
+      <div id="preloader">
+          <div id="loader" class="dots-fade">
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+      </div>
+  
+      <div id="top" class="s-wrap site-wrapper">
+  
+          <!-- site header
+          ================================================== -->
+          <header class="s-header">
+  
+              <div class="header__top">
+                  <div class="header__logo">
+                      <a class="site-logo" href="index">
+                          <img src="{% static 'images/logo.png'%}" alt="Homepage">
+                      </a>
+                  </div>
+  
+                
+                  <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+  
+              </div> <!-- end header__top -->
+  
+
+                {% include 'bases/menubar.html' %}
+                {% include 'bases/search.html'%}
+
+                  <ul class="header__social">
+                      <li class="ss-facebook">
+                          <a href="https://facebook.com/">
+                              <span class="screen-reader-text">Facebook</span>
+                          </a>
+                      </li>
+                      <li class="ss-twitter">
+                          <a href="#0">
+                              <span class="screen-reader-text">Twitter</span>
+                          </a>
+                      </li>
+                      <li class="ss-dribbble">
+                          <a href="#0">
+                              <span class="screen-reader-text">Dribbble</span>
+                          </a>
+                      </li>
+                      <li class="ss-pinterest">
+                          <a href="#0">
+                              <span class="screen-reader-text">Behance</span>
+                          </a>
+                      </li>
+                  </ul>
+  
+              </nav> <!-- end header__nav-wrap -->
+  
+              
+  
+          </header> <!-- end s-header -->
+
+          <div class="s-content">
+
+              <div class="masonry-wrap">
+  
+                  <div class="masonry">
+      
+                      <div class="grid-sizer"></div>
+
+                      <article class="masonry__brick entry format-link animate-this">
+                        
+                        <div class="ads entry__thumb">
+                            <div class="link-wrap">
+                                <h2>Espaço para ADS, entre em contatoconosco!conosco!conosco!conosco! conosco!</h2>
+                                
+                                <cite>
+                                    <a target="_blank" href="#">https://www.seulink.com</a>
+                                </cite>
+                            </div>
+                        </div>
+                        
+                    </article> <!-- end article -->
+
+        <!--             <article class="masonry__brick entry format-quote animate-this">
+                              
+                        <div class="entry__thumb">
+                            <blockquote>
+                                <p>Good design is making something intelligible..... a a a  a  a a  aa aaa a</p>
+    
+                                <cite>Dieter Rams</cite>
+                            </blockquote>
+                        </div>   
+        
+                    </article>-->  <!-- end article -->
+    
+
+                      {% for p in object_list %}
+                      <article class="masonry__brick entry format-standard animate-this">
+                              
+                          <div class="entry__thumb">
+                              <a href="/blog/{{p.url}}" class="entry__thumb-link">
+                                <img src="/media/{{p.image}}" maxwidth="" maxheight=""  style="margin-top: 20px;" 
+                                          srcset="/media/{{p.image}} 1x, /media/{{p.image}} 2x" alt="">
+                              </a>
+                          </div>
+          
+                          <div class="entry__text">
+                              <div class="entry__header">
+                                
+                                  <h2 class="entry__title"><a href="/blog/{{p.url}}">{{p.title}}.</a></h2>
+                                  <div class="entry__meta">
+                                      <span class="entry__meta-cat">
+                                          <a href="/todos">{{p.cat}}</a> 
+
+                                      </span>
+
+                                  </div>
+                                  
+                              </div>
+                          </div>
+          
+                      </article> <!-- end article -->
+
+                      {% empty %}
+                      <div class="sopa"><H3>Nada encontrado.</H3></div>
+                      {% endfor %}
+                      
+      
+                <!--     <article class="masonry__brick entry format-link animate-this">
+                        
+                        <div class="entry__thumb">
+                            <div class="link-wrap">
+                                <h2>Espaço para ADS, entre em contato conosco!</h2>
+                                <cite>
+                                    <a target="_blank" href="https://www.dreamhost.com/r.cgi?287326">https://www.dreamhost.com</a>
+                                </cite>
+                            </div>
+                        </div>--> 
+                        
+                    </article> <!-- end article -->
+   
+          
+      
+                  </div> <!-- end masonry -->
+  
+              </div> <!-- end masonry-wrap -->
+
+
+
+                <!--paginação-->
+              <div class="row">
+                  <div class="column large-full">
+                      <nav class="pgn">
+                          <ul>
+                            {% if page_obj.has_previous %}
+
+                            <a class="pgn__prev" href="?page={{ page_obj.previous_page_number }}">Prev</a></li></a>
+                        {% endif %}
+ 
+  
+                        <li><span class="pgn__num current">{{page_obj.number}}</span></li> 
+
+
+                       <!--       <li><a class="pgn__num" href="#0">1</a></li>
+                            <li><span class="pgn__num current">2</span></li>
+                              <li><a class="pgn__num" href="#0">3</a></li>
+                              <li><a class="pgn__num" href="#0">4</a></li>
+                              <li><a class="pgn__num" href="#0">5</a></li>
+                              <li><span class="pgn__num dots">…</span></li>
+                              <li><a class="pgn__num" href="#0">8</a></li>-->
+                              {% if page_obj.has_next %}
+                              <li><a class="pgn__next" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+
+                          {% endif %}
+
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+                <!--FIM paginação-->
+          </div> <!-- end s-content -->
+  
+          
+  
+          <!-- footer
+          ================================================== -->
+          <footer class="s-footer">
+              <div class="row">
+                  <div class="column large-full footer__content">
+                      <div class="footer__copyright">
+                          <span>© MTA Mods - 2023</span> 
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="go-top">
+                  <a class="smoothscroll" title="Back to Top" href="#top"></a>
+              </div>
+          </footer>
+  
+      </div> <!-- end s-wrap -->
+  
+  
+      <!-- Java Script
+      ================================================== -->
+      <script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+      <script src="{% static 'js/plugins.js'%}"></script>
+      <script src="{% static 'js/main.js'%}"></script>
+
+    <script>
+        M.AutoInit();
+    </script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+       <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+       <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel();
+          });
+       </script>
+</body>
+</html>
