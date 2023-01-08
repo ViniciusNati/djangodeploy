@@ -59,7 +59,13 @@ def post(request,url):
 
 
 def index(request):
-    return render (request,'index.html')
+    recente = Post.objects.order_by('-post_id')[:3]
+    sopa={
+
+        'recente':recente,
+    }
+
+    return render (request,'index.html',sopa)
 
 
 
