@@ -259,7 +259,7 @@ Pre-loader Style
 .js-preloader.loaded {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+/*  pointer-events: none;*/
 }
 
 @-webkit-keyframes dot {
