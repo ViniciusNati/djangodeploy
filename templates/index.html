@@ -204,15 +204,19 @@
 
 
                   {% for recente in recente %}
+                  
                   <div class="item">
-                    <img src="{% static 'index/assets/images/collection-01.jpg'%}" alt="">
+                    <li class="related__item">
+                    <a href="/blog/{{recente.url}}" class="related__link"></a>
+                    <img src="/media/{{recente.image}}" width="352" height="256" alt="">
                     <div class="down-content">
-                      <h4>Mutant Bored Ape Yacht Club</h4>
-                      <span class="collection">Items In Collection:<br><strong>310/340</strong></span>
-                      <span class="category">Category:<br><strong>Digital Crypto</strong></span>
+                      <h4>{{recente.title}}</h4>
+                      <span class="collection">Preço:<br><strong>R$: 0</strong></span>
+                      <span class="category">Categoria:<br><strong>MTA:SA</strong></span>
      
-                    </div>
+                    </div>  
                   </div>
+                </li>
                   {% endfor %}
                   </div>
                 </div>

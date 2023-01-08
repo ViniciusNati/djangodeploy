@@ -7,12 +7,6 @@ from django.core.paginator import Paginator
 from random import shuffle
 from django import template
 
-def pk(request):
-    return render(request,'private-key.pem')
-
-def ct(request):
-    return render(request,'certificate.pem')
-
 def robots(request):
     return render(request, 'robots.txt')
 
@@ -59,7 +53,7 @@ def post(request,url):
 
 
 def index(request):
-    recente = Post.objects.order_by('-post_id')[:3]
+    recente = Post.objects.order_by('-post_id')[:9]
     sopa={
 
         'recente':recente,
