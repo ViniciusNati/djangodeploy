@@ -19,7 +19,7 @@ ALLOWED_HOSTS = ['*'] #ALLOWED_HOSTS = ['www.modsmta.com.br']
 # Application definition
 
 INSTALLED_APPS = [
-     'material',
+    'material',
     'material.admin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     'blog',
 ]
 
@@ -129,10 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-#SECURE_SSL_REDIRECT = True
-#SECURE_SSL_HOST = 'www.modsmta.com.br'
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 MATERIAL_ADMIN_SITE = {
